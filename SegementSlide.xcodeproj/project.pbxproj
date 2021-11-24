@@ -119,7 +119,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		8031BEFE250099AC0043F71B /* Source */ = {
+		8031BEFE250099AC0043F71B /* Sources */ = {
 			isa = PBXGroup;
 			children = (
 				8031BEFF250099AC0043F71B /* Switcher */,
@@ -128,7 +128,7 @@
 				8031BF12250099AC0043F71B /* Header */,
 				8031BF14250099AC0043F71B /* Utility */,
 			);
-			path = Source;
+			path = Sources;
 			sourceTree = "<group>";
 		};
 		8031BEFF250099AC0043F71B /* Switcher */ = {
@@ -190,7 +190,7 @@
 			isa = PBXGroup;
 			children = (
 				80A869B721E627BE00A773CB /* SegementSlide */,
-				8031BEFE250099AC0043F71B /* Source */,
+				8031BEFE250099AC0043F71B /* Sources */,
 				80A869C621E6387600A773CB /* SegementSlide-Dynamic-Tests */,
 				8066125B21BA910000C05D7E /* Products */,
 				80A869BC21E6294D00A773CB /* Frameworks */,
