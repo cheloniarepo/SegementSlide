@@ -122,14 +122,16 @@ extension SegementSlideViewController {
             topConstraint.priority = UILayoutPriority(rawValue: 999)
             switcherView.topConstraint = topConstraint
         }
-        if safeAreaTopConstraint == nil {
-            safeAreaTopConstraint?.isActive = false
-            if #available(iOS 11, *) {
-                safeAreaTopConstraint = switcherView.topAnchor.constraint(greaterThanOrEqualTo: view.safeAreaLayoutGuide.topAnchor)
-            } else {
-                safeAreaTopConstraint = switcherView.topAnchor.constraint(greaterThanOrEqualTo: topLayoutGuide.bottomAnchor)
+        if switcherViewSafeAreaTopConstraintEnabled {
+            if safeAreaTopConstraint == nil {
+                safeAreaTopConstraint?.isActive = false
+                if #available(iOS 11, *) {
+                    safeAreaTopConstraint = switcherView.topAnchor.constraint(greaterThanOrEqualTo: view.safeAreaLayoutGuide.topAnchor)
+                } else {
+                    safeAreaTopConstraint = switcherView.topAnchor.constraint(greaterThanOrEqualTo: topLayoutGuide.bottomAnchor)
+                }
+                safeAreaTopConstraint?.isActive = true
             }
-            safeAreaTopConstraint?.isActive = true
         }
         if switcherView.leadingConstraint == nil {
             switcherView.leadingConstraint = switcherView.leadingAnchor.constraint(equalTo: view.leadingAnchor)

@@ -29,7 +29,10 @@ open class SegementSlideViewController: UIViewController {
     internal var canChildViewScroll: Bool = false
     internal var lastChildBouncesTranslationY: CGFloat = 0
     internal var cachedChildViewControllerIndex: Set<Int> = Set()
-    
+
+    open var switcherViewSafeAreaTopConstraintEnabled: Bool {
+        true
+    }
     open var topLayoutLength: CGFloat {
         let topLayoutLength: CGFloat
         if #available(iOS 11, *) {
@@ -50,7 +53,7 @@ open class SegementSlideViewController: UIViewController {
         return bottomLayoutLength
     }
     
-    public var headerStickyHeight: CGFloat {
+    open var headerStickyHeight: CGFloat {
         let headerHeight = headerView.frame.height.rounded(.up)
         if edgesForExtendedLayout.contains(.top) {
             return headerHeight - topLayoutLength
@@ -61,7 +64,7 @@ open class SegementSlideViewController: UIViewController {
     public var switcherHeight: CGFloat {
         return switcherView.ssDataSource?.height ?? 44
     }
-    public var contentViewHeight: CGFloat {
+    open var contentViewHeight: CGFloat {
         return view.bounds.height-topLayoutLength-switcherHeight
     }
     public var currentIndex: Int? {
