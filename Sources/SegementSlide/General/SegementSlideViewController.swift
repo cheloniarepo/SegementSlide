@@ -30,6 +30,26 @@ open class SegementSlideViewController: UIViewController {
     internal var lastChildBouncesTranslationY: CGFloat = 0
     internal var cachedChildViewControllerIndex: Set<Int> = Set()
     
+    public var topLayoutLength: CGFloat {
+        let topLayoutLength: CGFloat
+        if #available(iOS 11, *) {
+            topLayoutLength = view.safeAreaInsets.top
+        } else {
+            topLayoutLength = topLayoutGuide.length
+        }
+        return topLayoutLength
+    }
+    
+    public var bottomLayoutLength: CGFloat {
+        let bottomLayoutLength: CGFloat
+        if #available(iOS 11, *) {
+            bottomLayoutLength = view.safeAreaInsets.bottom
+        } else {
+            bottomLayoutLength = bottomLayoutGuide.length
+        }
+        return bottomLayoutLength
+    }
+    
     public var headerStickyHeight: CGFloat {
         let headerHeight = headerView.frame.height.rounded(.up)
         if edgesForExtendedLayout.contains(.top) {
