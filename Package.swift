@@ -24,8 +24,5 @@ let package = Package(
         .target(
             name: "SegementSlide",
             dependencies: []),
-    ],
-    swiftLanguageVersions: [
-        .v4
     ]
 )
